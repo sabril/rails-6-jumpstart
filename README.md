@@ -1,14 +1,15 @@
 # Rails 6 Jumpstart
 ## This repo is to quickly start a Rails 6.1 Project
 
-## The Specs
+## The Specs + Gems
 - Ruby 3.0
 - Rails 6.1
+- Sqlite3
 - Hotwire
 - Devise
-- Tailwindcss + TailwindUI
+- Tailwindcss 2.0 + TailwindUI
 - Alpinejs
-- Breadcrumb
+- Breadcrumb using croutons https://github.com/thoughtbot/croutons
 - Simple Form
 
 ## Install
@@ -27,4 +28,10 @@
 > rails s
 
 - Open https://localhost:3000
+
+## Contributors
+Open for contributors or open issues.
+
+## License
+MIT License. Copyright 2021 Syaiful Sabril
 
