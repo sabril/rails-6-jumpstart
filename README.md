@@ -1,24 +1,30 @@
-# README
+# Rails 6 Jumpstart
+## This repo is to quickly start a Rails 6.1 Project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## The Specs
+- Ruby 3.0
+- Rails 6.1
+- Hotwire
+- Devise
+- Tailwindcss + TailwindUI
+- Alpinejs
+- Breadcrumb
+- Simple Form
 
-Things you may want to cover:
+## Install
 
-* Ruby version
+- Clone the repo
+> git clone https://github.com/sabril/rails-6-jumpstart.git your_project_name
 
-* System dependencies
+> cd your_project_name
 
-* Configuration
+> bundle install
 
-* Database creation
+> rails db:create
 
-* Database initialization
+> rails db:migrate
 
-* How to run the test suite
+> rails s
 
-* Services (job queues, cache servers, search engines, etc.)
+- Open https://localhost:3000
 
-* Deployment instructions
-
-* ...
