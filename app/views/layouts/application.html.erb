@@ -12,6 +12,11 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="min-h-screen bg-white">
+      <%= render "layouts/partials/navbar" %>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
+    </div>
   </body>
 </html>
