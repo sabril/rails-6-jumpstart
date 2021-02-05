@@ -1,0 +1,40 @@
+<nav class="flex breadcrumb" aria-label="Breadcrumb">
+  <ol class="flex items-center space-x-4">
+    <% breadcrumbs.each do |breadcrumb| %>
+      <% if breadcrumb.label == 'Home' %>
+        <li>
+          <div class="flex items-center">
+            <a href="/" class="text-gray-400 hover:text-gray-500">
+              <!-- Heroicon name: solid/home -->
+              <span class=''>Home</span>
+            </a>
+          </div>
+        </li>
+      <% else %>
+        <% if breadcrumb.link? %>
+          <li>
+            <div class="flex items-center">
+              <svg class="flex-shrink-0 h-5 w-5 text-gray-300" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                <path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" />
+              </svg>
+              <%= link_to breadcrumb.label, breadcrumb.url, class: 'text-gray-400 hover:text-gray-500' %>
+            </div>
+          </li>
+        <% else %>
+          <li>
+            <div> 
+              <div class="flex items-center">
+                <svg class="flex-shrink-0 h-5 w-5 text-gray-300" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                  <path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" />
+                </svg>
+                <span class='ml-4 text-sm font-medium text-gray-500 hover:text-gray-700'>
+                  <%= breadcrumb.label %>
+                </span>
+              </div>
+            </div>
+          </li>
+        <% end %>
+      <% end %>
+    <% end %>
+  </ol>
+</nav>

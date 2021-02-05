@@ -1,43 +1,80 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: "my-4 space-y-8 divide-y divide-gray-200" }) do |f| %>
+  <div class="space-y-8 divide-y divide-gray-200 sm:space-y-5">
+    
+    <div class="pt-8 space-y-6 sm:pt-10 sm:space-y-5">
+      <div>
+        <h3 class="text-lg leading-6 font-medium text-gray-900">
+          Personal Information
+        </h3>
+        <p class="mt-1 max-w-2xl text-sm text-gray-500">
+          Use a permanent address where you can receive mail.
+        </p>
+      </div>
+      <div class="space-y-6 sm:space-y-5">
+        <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
+          <label for="user_first_name" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+            First name
+          </label>
+          <div class="mt-1 sm:mt-0 sm:col-span-2">
+            <%= f.input :first_name, autofocus: true, label: false, autocomplete: "first_name", input_html: {class: "block max-w-lg w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border-gray-300 rounded-md"} %>  
+          </div>
+        </div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+        <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
+          <label for="user_last_name" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+            Last name
+          </label>
+          <div class="mt-1 sm:mt-0 sm:col-span-2">
+            <%= f.input :last_name, autofocus: false, label: false, autocomplete: "last_name", input_html: {class: "block max-w-lg w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border-gray-300 rounded-md"} %>  
+          </div>
+        </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
+          <label for="user_email" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+            Email address
+          </label>
+          <div class="mt-1 sm:mt-0 sm:col-span-2">
+            <%= f.input :email, autofocus: false, label: false, autocomplete: "email", input_html: {class: "block max-w-lg w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border-gray-300 rounded-md"} %>           
+          </div>
+        </div>
+
+        <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
+          <label for="user_password" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+            Password <i>(leave blank if you don't want to change it)</i>
+          </label>
+
+          <div class="mt-1 sm:mt-0 sm:col-span-2">
+            <%= f.input :password, autofocus: false, label: false, input_html: {class: "block max-w-lg w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border-gray-300 rounded-md"} %>   
+          </div>
+        </div>
+
+        <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
+          <label for="user_password_confirmation" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+            Password Confirmation
+          </label>
+          <div class="mt-1">
+            <%= f.input :password_confirmation, autofocus: false, label: false, input_html: {class: "block max-w-lg w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border-gray-300 rounded-md"} %>   
+          </div>
+        </div>
+
+        <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
+          <label for="user_current_password" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+            Current Password <i>(we need your current password to confirm your changes)</i>
+          </label>
+          <div class="mt-1">
+            <%= f.input :current_password, autofocus: false, label: false, input_html: {class: "block max-w-lg w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border-gray-300 rounded-md"} %>   
+          </div>
+        </div>
+
+      </div>
+    </div>
   </div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
+  <div class="pt-5">
+    <div class="flex justify-end">
+      <button type="submit" class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+        Save
+      </button>
+    </div>
   </div>
 <% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>

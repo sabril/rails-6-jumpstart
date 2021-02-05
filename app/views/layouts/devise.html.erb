@@ -15,23 +15,7 @@
     <div class="min-h-screen">
       <%= render "layouts/partials/navbar" %>
       <%= render "layouts/partials/flash_message" %>
-      <div class="py-5 bg-white min-h-screen">
-        <header>
-          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <%= breadcrumbs %>
-          </div>
-        </header>
-        <main>
-          <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <!-- Replace with your content -->
-            <div class="px-4 py-0 sm:px-0">
-              <%= yield %>
-            </div>
-            <!-- /End replace -->
-          </div>
-        </main>
-      </div>
-      
+      <%= yield %>
     </div>
   </body>
 </html>
