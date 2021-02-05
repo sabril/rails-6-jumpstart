@@ -13,7 +13,7 @@
 
 ## Install
 
-- Clone the repo
+- Fork or Clone the repo
 > git clone https://github.com/sabril/rails-6-jumpstart.git your_project_name
 
 > cd your_project_name
