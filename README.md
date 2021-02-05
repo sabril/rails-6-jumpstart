@@ -1,5 +1,5 @@
 # Rails 6 Jumpstart
-## This repo is to quickly start a Rails 6.1 Project
+This repo is to quickly start a Rails 6.1 Project with Devise + Hotwire Setup
 
 ## The Specs + Gems
 - Ruby 3.0
