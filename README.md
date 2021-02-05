@@ -15,19 +15,22 @@ This repo is to quickly start a Rails 6.1 Project with Devise + Hotwire Setup
 ## Install
 
 - Fork or Clone the repo
-> git clone https://github.com/sabril/rails-6-jumpstart.git your_project_name
 
-> cd your_project_name
-
-> bundle install
-
-> rails db:create
-
-> rails db:migrate
-
-> rails s
+```zsh
+git clone https://github.com/sabril/rails-6-jumpstart.git your_project_name
+cd your_project_name
+bundle install
+yarn install
+rails db:create
+rails db:migrate
+rails s
+```
 
 - Open https://localhost:3000
+
+## Todo
+- Add test framework
+- ...
 
 ## Contributors
 Open for contributors or open issues.
